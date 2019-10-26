@@ -1,0 +1,36 @@
+[package]
+name = "arm-profile-a-tests"
+version = "0.1.0"
+authors = ["Denis Vasilik <contact@denisvasilik.com>"]
+edition = "2018"
+
+[[bin]]
+name = "arm-profile-a-tests"
+test = false
+bench = false
+
+[dependencies]
+panic-abort = "0.3.1"
+register = "0.3.2"
+
+[dependencies.arm-profile-a]
+path = "../arm-profile-a"
+features = ["inline-asm"]
+
+[dependencies.arm-isa-a32]
+path = "../arm-isa-a32"
+features = ["inline-asm"]
+
+[dependencies.arm-semihosting]
+path = "../arm-semihosting"
+features = ["inline-asm", "arm"]
+
+[dependencies.compiler_builtins]
+git = "https://github.com/rust-lang/compiler-builtins"
+features = ["mem"]
+
+[profile.release]
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
