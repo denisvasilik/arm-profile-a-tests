@@ -14,15 +14,15 @@ panic-abort = "0.3.1"
 register = "0.3.2"
 
 [dependencies.arm-profile-a]
-path = "../arm-profile-a"
+git = "https://github.com/denisvasilik/arm-profile-a"
 features = ["inline-asm"]
 
 [dependencies.arm-isa-a32]
-path = "../arm-isa-a32"
+git = "https://github.com/denisvasilik/arm-isa-a32"
 features = ["inline-asm"]
 
 [dependencies.arm-semihosting]
-path = "../arm-semihosting"
+git = "https://github.com/denisvasilik/arm-semihosting"
 features = ["inline-asm", "arm"]
 
 [dependencies.compiler_builtins]
